@@ -1,0 +1,60 @@
+
+
+{% extends "base.html" %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<body class="login-body">
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">Log In</div>
+                    <div class="card-body">
+                        <form method="post">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                            <button type="submit" class="btn btn-success">Log In</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        document.getElementById("id_password").placeholder = "password";
+        document.getElementById("id_username").placeholder = "username";
+
+        document.addEventListener("DOMContentLoaded", function() {
+            var errorLists = document.querySelectorAll(".errorlist");
+
+            // loop through the errorlist
+            errorLists.forEach(function(errorList) {
+                // create boostrap alert class
+                var alertDiv = document.createElement("div");
+                alertDiv.classList.add("alert", "alert-danger");
+
+                // loop through the errorlist items
+                var errorListItems = errorList.querySelectorAll("li");
+                errorListItems.forEach(function(errorListItem) {
+                    // create alert message each error
+                    var alertMessage = document.createElement("div");
+                    alertMessage.textContent = errorListItem.textContent;
+                    //margin bottom for visual appeal
+                    alertMessage.classList.add("mb-1");
+                    // add the alert message to bootstrap alert
+                    alertDiv.appendChild(alertMessage);
+                });
+
+                errorList.replaceWith(alertDiv);
+            });
+        });
+    </script>
+</body>
+{% endblock %}
+</html>
+

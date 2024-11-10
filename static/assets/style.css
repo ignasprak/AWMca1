@@ -1,0 +1,78 @@
+p {
+    text-align: center;
+}
+
+main {
+    width: 100%;
+}
+
+.card-header {
+        font-size: large;
+}
+
+label[for="id_username"], label[for="id_password"] {
+    display: none;
+}
+
+.login-body {
+    background-color: #dddddd;
+}
+
+#id_password, #id_username {
+    background-color: #b4dfd644;
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.updatedb {
+    margin-bottom: 20px !important;
+    float: left !important;
+}
+
+.custom-icon {
+    font-size: 20px;
+    color: #4b059c;
+}
+
+.data-vis{
+    margin-top: 50px;
+}
+
+#yourmap {
+    height: 58vh;
+}
+
+.btn {
+    margin: auto;
+    text-align: center;
+}
+
+.toast {
+    margin: auto;
+}
+
+h1{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.lon-span {
+    margin-right: 10px;
+}
+
+main {
+    width: 100%;
+}
+
+#favouriteLocation {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+#lastUpdated {
+    font-size: 1em;
+    color: #718394; 
+}
