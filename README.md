@@ -3,7 +3,7 @@
 A basic landmark locations map application.
 
 Website: 
-https://ignutwork-django-assignment.site
+ignasprak-geodjango.site
 
 
 # How to deploy
