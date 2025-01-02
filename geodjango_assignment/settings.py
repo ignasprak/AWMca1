@@ -19,13 +19,19 @@ STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
 STATICFILES_DIRS = [BASE_DIR / "static"]
 
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
+
+
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = '@)9^9%9t3+%9gkbobmwt$peegrv)uo^8=sr8szp^g0)w8m1$%4@nm'
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*', ]
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '*']
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 

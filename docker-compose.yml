@@ -1,0 +1,65 @@
+name: geodjango_assignment
+services:
+    postgis:
+        container_name: geodjango_assignment_postgis
+        networks:
+            geodjango_assignment_network:
+                aliases:
+                    - geodjango-assignment-postgis
+        tty: true
+        volumes:
+            - geodjango_assignment_postgis_data:/var/lib/postgresql
+        environment:
+            - POSTGRES_USER=c20424992
+            - POSTGRES_PASS=c20424992
+        ports:
+            - 25432:5432
+        image: kartoza/postgis
+    pgadmin4:
+        container_name: geodjango_assignment_pgadmin4
+        networks:
+            geodjango_assignment_network:
+                aliases:
+                    - geodjango-assignment-pgadmin4
+        tty: true
+        volumes:
+            - geodjango_assignment_pgadmin_data:/var/lib/pgadmin
+        environment:
+            - PGADMIN_DEFAULT_c20424992@mytudublin.ie
+            - PGADMIN_DEFAULT_PASSWORD=c20424992
+        ports:
+            - 20080:80
+        image: dpage/pgadmin4
+    geodjango_assignment:
+        container_name: geodjango_assignment
+        networks:
+            geodjango_assignment_network:
+                aliases:
+                    - geodjango_assignment
+        tty: true
+        ports:
+            - 8001:8001
+        image: hunthawk11/geodjango_assignment
+    nginx:
+        container_name: geodjango_assignment_nginx
+        networks:
+            geodjango_assignment_network:
+                aliases:
+                    - geodjango_assignment_nginx
+        tty: true
+        ports:
+            - 80:80
+        volumes:
+            - ./nginx.conf:/etc/nginx/nginx.conf
+        image: nginx:latest
+networks:
+    geodjango_assignment_network:
+        external:
+            name: geodjango_assignment_network
+volumes:
+    geodjango_assignment_postgis_data:
+        external:
+            name: geodjango_assignment_postgis_data
+    geodjango_assignment_pgadmin_data:
+        external:
+            name: geodjango_assignment_pgadmin_data

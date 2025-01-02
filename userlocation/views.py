@@ -36,4 +36,7 @@ def map_view(request):
     user_profile = Profile.objects.get(user=request.user)
     landmark_model = apps.get_model("userlocation", "Landmark")
     landmarks = landmark_model.objects.all()
-    return render(request, "map.html", {"landmarks": landmarks, "favourite_mark": user_profile.description, "last_updated": user_profile.last_updated})
+    return render(request, "map.html", {"landmarks": landmarks, 
+                                        "favourite_mark": user_profile.description, 
+                                        "last_updated": user_profile.last_updated
+                                        })
