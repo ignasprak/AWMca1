@@ -5,6 +5,11 @@ A basic landmark locations map application.
 Website: 
 https://ignasprak-geodjango.site
 
+Username:
+ignasprak
+
+Password:
+ignasprak@gmail.com
 
 # How to deploy
 
